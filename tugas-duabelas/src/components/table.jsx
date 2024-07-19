@@ -137,7 +137,7 @@ const Table = () => {
                 </table>
             </div>
             <Component openModal={openModal} setOpenModal={setOpenModal} title={"Edit data"} p={nim} />
-            <ModalWarning warn={warn} setWarn={setWarn} p={nim} />
+            <ModalWarning warn={warn} setWarn={setWarn} p={nim} cbP={setNim}/>
         </>
     );
 }

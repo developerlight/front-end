@@ -4,7 +4,7 @@ import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { apis } from "../apis/mahasiswa";
 import { useNavigate } from "react-router-dom";
 
-export function ModalWarning({ warn, setWarn, p}) {
+export function ModalWarning({ warn, setWarn, p, cbP}) {
   const [error, setError] = useState('');
   const Navigate = useNavigate();
     const deleteEvent = async (id) => {
@@ -12,7 +12,8 @@ export function ModalWarning({ warn, setWarn, p}) {
             const response = await apis.delete(id);
             console.log(response);
             setWarn(false);
-            Navigate('/');
+            cbP('');
+            Navigate('/dashboard');
         } catch (error) {
             setError(error.message);
             Alert(error);

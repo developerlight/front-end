@@ -33,7 +33,7 @@ const Component = ({openModal, setOpenModal, title, p}) => {
         try {
             const response = await apis.create(data);
             if (response.data.message === 'Data added successfully'){
-                Navigate('/');
+                Navigate('/dashboard');
             }
             console.log(response.data);
         } catch (error) {
